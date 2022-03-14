@@ -10,7 +10,9 @@ public class Student {
     private String name;
 
     public Student(double number, String name){
-        this.number = number;
+        if(number <= 99999999){
+        this.number = number;}
+        else {this.number = 0;}
         this.name = name;
         students.add(this);
     }
