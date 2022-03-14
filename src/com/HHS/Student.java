@@ -35,19 +35,38 @@ public class Student {
 
     }
 
-    public static ArrayList<Student> getStudent(){
-        //Return student
-        return null;
-
+    public static ArrayList<Student> getStudents(){
+        return students;
     }
     public String toString(){
-        //return alle info student
-        return null;
-
+        return String.format("%s / %d", name, (int)number);
     }
     public boolean hasPassedExam(Exam exam){
-        //Check if exam passed then true else false    
-        return false;
+        return passedExam.contains(exam);
     }
-    
+
+    public int getPassedExamCount(){
+        return passedExam.size();
+    }
+
+    public void addPassedExam(Exam exam) {
+        passedExam.add(exam);
+    }
+
+    public static Student studentWithMostPassedExams() {
+        Student most = null;
+        for (Student s : students) {
+            if (most == null){
+                most = s;
+            }else if (most.getPassedExamCount() < s.getPassedExamCount()){
+                most = s;
+            }
+        }
+        return most;
+    }
+
+    public static void menuMostPassedExams(){
+        Student mostPassed = studentWithMostPassedExams();
+        System.out.println("Student met meeste gehaalde examens: " + mostPassed.toString());
+    }
 }
