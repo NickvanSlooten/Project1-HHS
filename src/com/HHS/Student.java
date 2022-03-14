@@ -35,19 +35,17 @@ public class Student {
 
     }
 
-    public static ArrayList<Student> getStudent(){
-        //Return student
-        return null;
-
+    public static ArrayList<Student> getStudents(){
+        return students;
     }
     public String toString(){
-        //return alle info student
-        return null;
-
+        return String.format("%s / %d", name, number);
     }
     public boolean hasPassedExam(Exam exam){
-        //Check if exam passed then true else false    
-        return false;
+        return passedExam.contains(exam);
     }
-    
+
+    public void addPassedExam(Exam exam) {
+        passedExam.add(exam);
+    }
 }
