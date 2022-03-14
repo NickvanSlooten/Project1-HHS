@@ -45,7 +45,23 @@ public class Student {
         return passedExam.contains(exam);
     }
 
+    public int getPassedExamCount(){
+        return passedExam.size();
+    }
+
     public void addPassedExam(Exam exam) {
         passedExam.add(exam);
+    }
+
+    public static Student mostPassedExams() {
+        Student most = null;
+        for (Student s : students) {
+            if (most == null){
+                most = s;
+            }else if (most.getPassedExamCount() < s.getPassedExamCount()){
+                most = s;
+            }
+        }
+        return most;
     }
 }
