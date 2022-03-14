@@ -36,13 +36,18 @@ public class Student {
     }
 
     public static ArrayList<Student> getStudent(){
+        //Return student
+        return null;
 
     }
     public String toString(){
+        //return alle info student
+        return null;
 
     }
     public boolean hasPassedExam(Exam exam){
-
+        //Check if exam passed then true else false    
+        return false;
     }
     
 }
