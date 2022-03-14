@@ -11,5 +11,6 @@ public class Main {
         Student s2 = new Student(2100001, "Gameing");
         Student s3 = new Student(2100002, "De meeste");
         s3.addPassedExam(ex1);
+        Student.menuMostPassedExams();
     }
 }

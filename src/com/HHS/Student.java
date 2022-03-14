@@ -39,7 +39,7 @@ public class Student {
         return students;
     }
     public String toString(){
-        return String.format("%s / %d", name, number);
+        return String.format("%s / %d", name, (int)number);
     }
     public boolean hasPassedExam(Exam exam){
         return passedExam.contains(exam);
@@ -53,7 +53,7 @@ public class Student {
         passedExam.add(exam);
     }
 
-    public static Student mostPassedExams() {
+    public static Student studentWithMostPassedExams() {
         Student most = null;
         for (Student s : students) {
             if (most == null){
@@ -63,5 +63,10 @@ public class Student {
             }
         }
         return most;
+    }
+
+    public static void menuMostPassedExams(){
+        Student mostPassed = studentWithMostPassedExams();
+        System.out.println("Student met meeste gehaalde examens: " + mostPassed.toString());
     }
 }
