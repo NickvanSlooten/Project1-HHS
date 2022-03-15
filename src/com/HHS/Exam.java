@@ -8,10 +8,12 @@ public class Exam {
 
     private String name;
     private Question[] questions;
+    private int minimumCorrect;
 
-    public Exam(String name, Question[] questions){
+    public Exam(String name, Question[] questions, int minimumCorrect){
         this.name = name;
         this.questions = questions;
+        this.minimumCorrect = minimumCorrect;
         exams.add(this);
     }
 
@@ -34,4 +36,6 @@ public class Exam {
     public void setQuestions(Question[] questions) {
         this.questions = questions;
     }
+
+    public int getMinimumCorrect() { return minimumCorrect; }
 }
