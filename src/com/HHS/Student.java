@@ -33,7 +33,12 @@ public class Student {
 
     public static void removeStudent(Student student){
 
-    }
+        for (int i = 0; i < students.size(); i++){
+            if (students.get(i).name.equals(student.name))
+                students.remove(i);       // welke student je wilt verwijderen uit de ArrayList
+            }
+        }
+
 
     public static ArrayList<Student> getStudents(){
         return students;
