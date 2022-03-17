@@ -6,28 +6,22 @@ public class Student {
 
     private static ArrayList<Student>students = new ArrayList<>();
     private ArrayList<Exam>passedExam = new ArrayList<>();
-    private double number;
+    private double number = 10000000;
     private String name;
 
-    public Student(double number, String name) throws IllegalArgumentException{
-        if(number > 99999999){
-            throw new IllegalArgumentException("Number is too long");
-        }
-        if(number < 10000000){
-            throw new IllegalArgumentException("Number is too short");
-        }
-        else {this.number = number;}
+    public Student(double number, String name){
+        this.number = number;
         this.name = name;
-        if (!students.contains(number)){
-        students.add(this);}
+        students.add(this);
+        nextNumber();
+    }
+
+    public double nextNumber(){
+        number++;
     }
 
     public double getNumber() {
         return number;
-    }
-
-    public void setNumber(double number) {
-        this.number = number;
     }
 
     public String getName() {
