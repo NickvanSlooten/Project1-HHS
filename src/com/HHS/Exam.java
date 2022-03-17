@@ -3,20 +3,12 @@ package com.HHS;
 import java.util.ArrayList;
 
 public class Exam {
-
-    public static ArrayList<Exam> exams = new ArrayList<>();
-
     private String name;
-    private Question[] questions;
+    private ArrayList<Question> questions = new ArrayList<>();
+    private int minimumCorrect;
 
-    public Exam(String name, Question[] questions){
+    public Exam(String name){
         this.name = name;
-        this.questions = questions;
-        exams.add(this);
-    }
-
-    public static ArrayList<Exam> getExams() {
-        return exams;
     }
 
     public String getName() {
@@ -27,11 +19,18 @@ public class Exam {
         this.name = name;
     }
 
-    public Question[] getQuestions() {
+    public ArrayList<Question> getQuestions() {
         return questions;
     }
 
-    public void setQuestions(Question[] questions) {
-        this.questions = questions;
+    public void createQuestion(String question, String explanation, String answer) {
+        questions.add(new Question(question, explanation, answer));
+        updateMinimumCorrect();
+    }
+
+    public int getMinimumCorrect() { return minimumCorrect; }
+
+    public void updateMinimumCorrect(){
+        minimumCorrect = (int)((questions.size() * 0.70) + 0.5);
     }
 }
