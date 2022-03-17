@@ -9,12 +9,17 @@ public class Student {
     private double number;
     private String name;
 
-    public Student(double number, String name){
-        if(number <= 99999999){
-        this.number = number;}
-        else {this.number = 0;}
+    public Student(double number, String name) throws IllegalArgumentException{
+        if(number > 99999999){
+            throw new IllegalArgumentException("Number is too long");
+        }
+        if(number < 10000000){
+            throw new IllegalArgumentException("Number is too short");
+        }
+        else {this.number = number;}
         this.name = name;
-        students.add(this);
+        if (!students.contains(number)){
+        students.add(this);}
     }
 
     public double getNumber() {
