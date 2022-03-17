@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Student {
 
     private static ArrayList<Student>students = new ArrayList<>();
-    private ArrayList<Exam>passedExam = new ArrayList<>();
+    private ArrayList<Exam>passedExams = new ArrayList<>();
     private double number = 10000000;
     private String name;
 
@@ -47,8 +47,10 @@ public class Student {
 
     }
     public boolean hasPassedExam(Exam exam){
-        //Check if exam passed then true else false    
-        return false;
+        //Check if exam passed then true else false
+        if (passedExams.contains(name) && passedExams.contains(exam)){
+        return true;}
+        else return false;
     }
     
 }
