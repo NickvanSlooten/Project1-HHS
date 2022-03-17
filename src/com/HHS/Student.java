@@ -4,24 +4,24 @@ import java.util.ArrayList;
 
 public class Student {
 
-    private static ArrayList<Student>students = new ArrayList<>();
     private ArrayList<Exam>passedExams = new ArrayList<>();
-    private double number = 10000000;
+    private  double number;
+    private  static double nextNumber = 10000000;
     private String name;
 
     public Student(double number, String name){
-        this.number = number;
+        this.number = nextNumber();
         this.name = name;
-        students.add(this);
-        nextNumber();
+
     }
 
     public double nextNumber(){
-        number++;
+        return nextNumber++;
+        
     }
 
     public double getNumber() {
-        return number;
+        return nextNumber;
     }
 
     public String getName() {
@@ -32,25 +32,18 @@ public class Student {
         this.name = name;
     }
 
-    public static void removeStudent(Student student){
-
-    }
-
-    public static ArrayList<Student> getStudent(){
-        //Return student
-        return null;
-
-    }
     public String toString(){
-        //return alle info student
-        return null;
-
+        return String.format("%s / %d", name, (int)number);
     }
     public boolean hasPassedExam(Exam exam){
-        //Check if exam passed then true else false
-        if (passedExams.contains(name) && passedExams.contains(exam)){
-        return true;}
-        else return false;
+        return passedExams.contains(exam);
     }
-    
+
+    public int getPassedExamsCount(){
+        return passedExams.size();
+    }
+
+    public void addPassedExam(Exam exam) {
+        passedExams.add(exam);
+    }
 }
