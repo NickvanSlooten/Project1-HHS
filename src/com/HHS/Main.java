@@ -3,14 +3,15 @@ package com.HHS;
 public class Main {
 
     public static void main(String[] args) {
-	    Exam ex1 = new Exam("Exam 1", new Question[]{
+        School school = new School();
+	    Exam ex1 = school.addExam("Exam 1", new Question[]{
                 new Question("question text", "explaination text", "answer"),
                 new Question("q2", "e2", "a2")
-        }, 1);
-        Student s1 = new Student(2100000, "Base");
-        Student s2 = new Student(2100001, "Gameing");
-        Student s3 = new Student(2100002, "De meeste");
-        s3.addPassedExam(ex1);
-        Student.menuMostPassedExams();
+        });
+        Student s1 = school.addStudent("Base");
+        Student s2 = school.addStudent("De meeste");
+        Student s3 = school.addStudent("Gameing");
+        s2.addPassedExam(ex1);
+        school.menuStudentWithMostPassedExams();
     }
 }
