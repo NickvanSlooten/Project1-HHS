@@ -7,7 +7,7 @@ public class Student {
     private double number;
     private String name;
 
-    public Student(double number, String name){
+    public Student(double number, String name) {
         this.number = number;
         this.name = name;
     }
@@ -33,6 +33,14 @@ public class Student {
     }
     public boolean hasPassedExam(Exam exam){
         return passedExams.contains(exam);
+    }
+
+    public void getStudent() {
+
+        for (int i = 0; i < students.size(); i++) {
+            System.out.println(students.get(i));
+        }
+
     }
 
     public int getPassedExamsCount(){
