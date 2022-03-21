@@ -15,6 +15,14 @@ public class School {
         exams.remove(exam);
     }
 
+    public void printExams()
+    {
+        for(Exam e: exams)
+        {
+            System.out.println(e.getName());
+        }
+    }
+
     public Student addStudent(String name)
     {
         students.add(new Student(2100000, name));
