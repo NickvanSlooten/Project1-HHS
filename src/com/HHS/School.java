@@ -18,7 +18,10 @@ public class School {
 
     public void printExams()
     {
-        for(Exam e: exams)
+        if(exams.size() == 0) {
+            System.out.println("Er zijn momenteel geen examens");
+        }
+        else for(Exam e: exams)
         {
             System.out.println(e.getName());
         }
