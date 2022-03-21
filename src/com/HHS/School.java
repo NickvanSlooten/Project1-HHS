@@ -45,4 +45,10 @@ public class School {
         Student mostPassed = studentWithMostPassedExams();
         System.out.println("Student met meeste gehaalde examens: " + mostPassed.toString());
     }
+
+    public void menuGetStudents() {
+        for (int i = 0; i < students.size(); i++) {
+            System.out.println(students.get(i));
+        }
+    }
 }

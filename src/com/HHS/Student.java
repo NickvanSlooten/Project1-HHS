@@ -39,14 +39,6 @@ public class Student {
         return passedExams.contains(exam);
     }
 
-    public void getStudent() {
-
-        for (int i = 0; i < students.size(); i++) {
-            System.out.println(students.get(i));
-        }
-
-    }
-
     public int getPassedExamsCount(){
         return passedExams.size();
     }
