@@ -5,23 +5,21 @@ import java.util.ArrayList;
 public class Student {
 
     private ArrayList<Exam>passedExams = new ArrayList<>();
-    private  double number;
-    private  static double nextNumber = 10000000;
+    private long number;
+    private static long nextNumber = 20000000;
     private String name;
 
-  public Student(double number, String name){
+  public Student(String name){
         this.number = nextNumber();
         this.name = name;
-
     }
 
-    public double nextNumber(){
+    public long nextNumber(){
         return nextNumber++;
-        
     }
 
-    public double getNumber() {
-        return nextNumber;
+    public long getNumber() {
+        return number;
     }
 
     public String getName() {
