@@ -3,21 +3,25 @@ package com.HHS;
 import java.util.ArrayList;
 
 public class Student {
-    private ArrayList<Exam> passedExams = new ArrayList<>();
-    private double number;
+
+    private ArrayList<Exam>passedExams = new ArrayList<>();
+    private  double number;
+    private  static double nextNumber = 10000000;
     private String name;
 
-    public Student(double number, String name) {
-        this.number = number;
+  public Student(double number, String name){
+        this.number = nextNumber();
         this.name = name;
+
+    }
+
+    public double nextNumber(){
+        return nextNumber++;
+        
     }
 
     public double getNumber() {
-        return number;
-    }
-
-    public void setNumber(double number) {
-        this.number = number;
+        return nextNumber;
     }
 
     public String getName() {
