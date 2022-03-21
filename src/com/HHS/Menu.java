@@ -7,6 +7,8 @@ public class Menu {
     
     public static void mainMenu() {
 
+        School school = new School();
+
         System.out.println("1) Lijst met examens");
         System.out.println("2) Lijst met studenten");
         System.out.println("3) Nieuwe student inschrijven");
@@ -20,8 +22,8 @@ public class Menu {
         try (Scanner scanner = new Scanner(System.in)) {
             Integer userChoice = scanner.nextInt();
             if(userChoice == 1) {
-    
-                //Show list of exams
+                //Show exams
+                school.printExams();
             }else if(userChoice == 2) {
     
                 //Show list of students
@@ -41,7 +43,6 @@ public class Menu {
                 
             }else if (userChoice == 8) {
                 //Which student passed the most exams
-                School school = new School();
                 school.studentWithMostPassedExams();
             }else if (userChoice == 0) {
                 //Exit the program
