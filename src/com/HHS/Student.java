@@ -9,7 +9,7 @@ public class Student {
     private  static double nextNumber = 10000000;
     private String name;
 
-    public Student(double number, String name){
+  public Student(double number, String name){
         this.number = nextNumber();
         this.name = name;
 
@@ -37,6 +37,14 @@ public class Student {
     }
     public boolean hasPassedExam(Exam exam){
         return passedExams.contains(exam);
+    }
+
+    public void getStudent() {
+
+        for (int i = 0; i < students.size(); i++) {
+            System.out.println(students.get(i));
+        }
+
     }
 
     public int getPassedExamsCount(){

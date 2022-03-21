@@ -6,8 +6,8 @@ public class School {
     private ArrayList<Student> students = new ArrayList<>();
     private ArrayList<Exam> exams = new ArrayList<>();
 
-    public Exam addExam(String name, Question[] questions) {
-        exams.add(new Exam(name, questions));
+    public Exam addExam(String name) {
+        exams.add(new Exam(name));
         return exams.get(exams.size()-1);
     }
 
