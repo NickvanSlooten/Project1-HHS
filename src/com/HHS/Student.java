@@ -3,21 +3,23 @@ package com.HHS;
 import java.util.ArrayList;
 
 public class Student {
-    private ArrayList<Exam> passedExams = new ArrayList<>();
-    private double number;
+
+    private ArrayList<Exam>passedExams = new ArrayList<>();
+    private long number;
+    private static long nextNumber = 20000000;
     private String name;
 
-    public Student(double number, String name) {
-        this.number = number;
+  public Student(String name){
+        this.number = nextNumber();
         this.name = name;
     }
 
-    public double getNumber() {
-        return number;
+    public long nextNumber(){
+        return nextNumber++;
     }
 
-    public void setNumber(double number) {
-        this.number = number;
+    public long getNumber() {
+        return number;
     }
 
     public String getName() {
@@ -33,14 +35,6 @@ public class Student {
     }
     public boolean hasPassedExam(Exam exam){
         return passedExams.contains(exam);
-    }
-
-    public void getStudent() {
-
-        for (int i = 0; i < students.size(); i++) {
-            System.out.println(students.get(i));
-        }
-
     }
 
     public int getPassedExamsCount(){

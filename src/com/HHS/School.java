@@ -1,6 +1,7 @@
 package com.HHS;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class School {
     private ArrayList<Student> students = new ArrayList<>();
@@ -17,7 +18,7 @@ public class School {
 
     public Student addStudent(String name)
     {
-        students.add(new Student(2100000, name));
+        students.add(new Student(name));
         return students.get(students.size()-1);
     }
 
@@ -44,5 +45,50 @@ public class School {
     public void menuStudentWithMostPassedExams(){
         Student mostPassed = studentWithMostPassedExams();
         System.out.println("Student met meeste gehaalde examens: " + mostPassed.toString());
+    }
+
+    public void menuGetStudents() {
+        for (int i = 0; i < students.size(); i++) {
+            System.out.println(students.get(i));
+        }
+    }
+
+    public void menuHasStudentPassedExam() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Typ het studentnummer van de student: ");
+        long studentNumber = scanner.nextLong();
+        Student selectedStudent = null;
+        for (Student student : students) {
+            if (student.getNumber() == studentNumber) {
+                selectedStudent = student;
+                break;
+            }
+        }
+        if (selectedStudent == null) {
+            System.out.println("Er zit geen student met dit studentnummer in het systeem!");
+        }
+        else {
+            System.out.println("Selecteer het examen waarvan je de resultaten wilt zien: ");
+            int i = 0;
+            for (Exam exam : exams) {
+                System.out.print(i);
+                System.out.print(") ");
+                System.out.println(exam.getName());
+                i++;
+            }
+            System.out.print("Keuze: ");
+            int keuze = scanner.nextInt();
+            if (keuze >= 0 && keuze < exams.size()) {
+                if (selectedStudent.hasPassedExam(exams.get(keuze))) {
+                    System.out.println("De student is geslaagd voor dit examen.");
+                }
+                else {
+                    System.out.println("De student is niet geslaagd voor dit examen.");
+                }
+            }
+            else {
+                System.out.println("Ongeldige examen keuze!");
+            }
+        }
     }
 }
