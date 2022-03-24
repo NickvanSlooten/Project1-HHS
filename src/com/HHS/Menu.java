@@ -21,10 +21,10 @@ public class Menu {
             System.out.print("Keuze: ");
             Integer userChoice = scanner.nextInt();
             if(userChoice == 1) {
-    
+                school.printExams();
                 //Show list of exams
             }else if(userChoice == 2) {
-    
+                school.menuGetStudents();
                 //Show list of students
             }else if (userChoice == 3) {
                 //Add new student

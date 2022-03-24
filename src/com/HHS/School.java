@@ -18,7 +18,7 @@ public class School {
 
     public void printExams()
     {
-        for(Exam e: exams)
+        for (Exam e: exams)
         {
             System.out.println(e.getName());
         }
