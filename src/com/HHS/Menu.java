@@ -7,6 +7,8 @@ public class Menu {
     
     public static void mainMenu(School school) {
 
+        School school = new School();
+
         System.out.println("1) Lijst met examens");
         System.out.println("2) Lijst met studenten");
         System.out.println("3) Nieuwe student inschrijven");
@@ -21,8 +23,8 @@ public class Menu {
             System.out.print("Keuze: ");
             Integer userChoice = scanner.nextInt();
             if(userChoice == 1) {
+                //Show exams
                 school.printExams();
-                //Show list of exams
             }else if(userChoice == 2) {
                 school.menuGetStudents();
                 //Show list of students
