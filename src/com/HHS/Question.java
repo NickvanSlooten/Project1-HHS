@@ -43,7 +43,7 @@ public class Question {
     }
 
     public String questionToString(){
-        return getQuestion() + getExplanation();
+        return getQuestion() + "\n" + getExplanation() ;
     }
 
     public boolean questionCheck(String answer){
