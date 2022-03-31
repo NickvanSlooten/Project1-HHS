@@ -28,17 +28,7 @@ public class Exam {
         updateMinimumCorrect();
     }
 
-    public String questionToString(ArrayList<Question> questions, int i){
-        return questions.get(i).getQuestion() + questions.get(i).getExplanation();
-    }
-
-    public boolean questionCheck(String answer, int i){
-        boolean ans = false;
-        if (answer.equals(questions.get(i).getAnswer())){
-            ans = true;
-        }
-        return ans;
-    }
+    
 
     public int getMinimumCorrect() { return minimumCorrect; }
 
