@@ -16,6 +16,18 @@ public class School {
         exams.remove(exam);
     }
 
+    public void printExams()
+    {
+        if(exams.size() == 0) {
+            System.out.println("Er zijn momenteel geen examens");
+        }
+        else for(Exam e: exams)
+
+        {
+            System.out.println(e.getName());
+        }
+    }
+
     public Student addStudent(String name)
     {
         students.add(new Student(name));

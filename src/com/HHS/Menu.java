@@ -5,7 +5,9 @@ import java.util.Scanner;
 public class Menu {
 
     
-    public static void mainMenu() {
+    public static void mainMenu(School school) {
+
+        School school = new School();
 
         System.out.println("1) Lijst met examens");
         System.out.println("2) Lijst met studenten");
@@ -16,14 +18,15 @@ public class Menu {
         System.out.println("7) Welke examens heeft student gehaald?");
         System.out.println("8) Welke student heeft de meeste examens gehaald?");
         System.out.println("0) Exit");
-    
-        try (Scanner scanner = new Scanner(System.in)) {
+        Scanner scanner = new Scanner(System.in);
+        try {
+            System.out.print("Keuze: ");
             Integer userChoice = scanner.nextInt();
             if(userChoice == 1) {
-    
-                //Show list of exams
+                //Show exams
+                school.printExams();
             }else if(userChoice == 2) {
-    
+                school.menuGetStudents();
                 //Show list of students
             }else if (userChoice == 3) {
                 //Add new student
@@ -34,21 +37,20 @@ public class Menu {
                 //Do Exam test
                 
             }else if (userChoice == 6) {
-                //Did student pass?
+                school.menuHasStudentPassedExam();
                 
             }else if (userChoice == 7) {
                 //Which exams did the student pass
                 
             }else if (userChoice == 8) {
                 //Which student passed the most exams
-                School school = new School();
                 school.studentWithMostPassedExams();
             }else if (userChoice == 0) {
                 //Exit the program
                 System.exit(0);
             }
         }catch(Exception e) {
-        System.out.println("Something went wrong.");
-    }
+            System.out.println("Something went wrong: " + e.toString());
         }
+    }
 }
