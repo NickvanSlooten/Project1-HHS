@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class School {
+    Scanner scan = new Scanner(System.in);
     private ArrayList<Student> students = new ArrayList<>();
     private ArrayList<Exam> exams = new ArrayList<>();
 
@@ -26,6 +27,52 @@ public class School {
             System.out.println(e.getName());
         }
     }
+
+    public void menuExamenAfnemen()
+    {
+        Student student = getStudentByInput();
+
+        printExams();
+        System.out.println("Welk examen wilt uw afnemen?");
+        int examnummer = scan.nextInt();
+        scan.nextLine();
+
+        Exam exam = exams.get(examnummer - 1);
+
+        int aantalGoed = 0;
+
+        for(int i = 0; i < exam.getQuestions().size(); i++)
+        {
+            Question question = exam.getQuestions().get(i);
+            System.out.println(question.questionToString());
+
+            String antwoord = scan.nextLine();
+
+            if(question.questionCheck(antwoord))
+            {
+                System.out.println("Goed gedaan!");
+                aantalGoed++;
+            }
+            else
+            {
+                System.out.println("Fout. Het goede antwoord is: ");
+                System.out.println(question.getAnswer());
+            }
+
+        }
+
+        if(exam.didStudentPass(aantalGoed))
+        {
+            System.out.println("Je bent geslaagd!");
+            student.addPassedExam(exam);
+        }
+        else
+        {
+            System.out.println("Je hebt de examen niet gehaald.");
+        }
+
+    }
+
 
     public Student addStudent(String name)
     {
@@ -152,6 +199,29 @@ public class School {
             }
             else {
                 System.out.println("Ongeldige examen keuze!");
+            }
+        }
+    }
+
+    public void menuAddExam(){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("welke examen wilt u toevoegen?");
+        String nieuweExamen = scanner.nextLine();
+
+        addExam(nieuweExamen);
+        System.out.println("Examen verwijder: " + nieuweExamen);
+
+    }
+
+    public void menuRemoveExam(){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Welke examen wilt u verwijder?");
+        String verwijderExamen = scanner.nextLine();
+
+        for (Exam i : exams){
+            if (verwijderExamen.equals(i.getName())) {
+                menuRemoveExam();
+                System.out.println("Dit examen is verwijderd: " + verwijderExamen);
             }
         }
     }
