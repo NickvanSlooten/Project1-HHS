@@ -3,13 +3,8 @@ package com.HHS;
 import java.util.Scanner;
 import java.util.ArrayList;
 public class Menu {
-
-
-
-
-
      // Create an ArrayList object   
-     public static ArrayList<String>  Keuzes = new ArrayList<>();
+    public static ArrayList<String>  Keuzes = new ArrayList<>();
     public static ArrayList <String> KeuzesVullen() {
        Keuzes.add("1) Lijst met examens");
        Keuzes.add("2) Lijst met studenten");
@@ -25,22 +20,23 @@ public class Menu {
        return Keuzes;
     }
 
-
-    public static void mainMenu(School school) {
-        //Keuzes laten zien
+    public static void laatKeuzesZien() {
         KeuzesVullen();
 
         if(!Keuzes.isEmpty()) {
-        for (int i = 0; i < Keuzes.size(); i++) {
-        System.out.println(Keuzes.get(i));
+            for (int i = 0; i < Keuzes.size(); i++) {
+            System.out.println(Keuzes.get(i));
+    
+            }
+    
+            }else{
+    
+                System.out.println("Keuzes zijn leeg");
+            }
+    }
 
-        }
-
-        }else{
-
-            System.out.println("Keuzes zijn leeg");
-        }
-        
+    public static void mainMenu(School school) {
+     
 
         Scanner scanner = new Scanner(System.in);
         try {
@@ -54,12 +50,10 @@ public class Menu {
                 //Show list of students
             }else if (userChoice == 3) {
                 //Add new student
-                school.menuAddStudent();
-            }else if (userChoice == 4) {
-                //Remove student
                 school.menuRemoveStudent();
             }else if (userChoice == 5) {
                 school.menuExamenAfnemen();
+                //Do Exam test
             }else if (userChoice == 6) {
                 school.menuHasStudentPassedExam();
                 
