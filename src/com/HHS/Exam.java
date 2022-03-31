@@ -29,7 +29,7 @@ public class Exam {
     }
 
     public boolean didStudentPass(int numberRight){
-        boolean passed = false
+        boolean passed = false;
         if(getMinimumCorrect()<= numberRight){
             passed = true;
         }
