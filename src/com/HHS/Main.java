@@ -11,7 +11,7 @@ public class Main {
         ex1.createQuestion("77.258 / 2 = ?", "Bereken de uitkomst van de som en rond je antwoord af op 3 decimalen. Tip: je mag een rekenmachine gebruiken.", "38.629");
         ex1.createQuestion("25(46/92) + 33(14/28) = ?", "Bereken de uitkomst van de som en rond je antwoord af op 1 decimaal.", "59");
 
-        ex1.createQuestion("Wat is de uitkomst van 45.56^2 = ? \n A) 2075.71 \n B) 2075.72 \n C) 2.075.71 \n D) 2074.72 ", "Bereken de uitkomst van de som en rond je antwoord af op 2 decimalen. Tip: je mag een rekenmachina gebruiken", "A");
+        ex1.createQuestion("Wat is de uitkomst van 45.56^2 = ? \n A) 2075.71 \n B) 2075.72 \n C) 20075.71 \n D) 2074.72 ", "Bereken de uitkomst van de som en rond je antwoord af op 2 decimalen. Tip: je mag een rekenmachina gebruiken", "A");
         ex1.createQuestion("Gegeven formule: 4^2 + b^2 = 5^2. Wat is de waarde van b? \n A) 1 \n B) 3 \n C) 2 \n D) 4 ", "Tip: b = Wortel(5^2 - 4^2) ", "B");
         ex1.createQuestion("Gegeven de som: 4.75 X ((9/3)-1)= b. Wat is de waarde van b? \n A) 4.75 \n B) 9.5 \n C) 8 \n D) 8.5", "Tip: Denk aan de rekenregels", "B");
         ex1.createQuestion("Wat is de uitkomst van 6.840/2 = ?. \n A) 30.420 \n B) 3420.0 \n C) 34.20 \n D) 3.420", "Rond je antwoord af op 3 decimalen", "D");
