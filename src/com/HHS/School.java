@@ -71,6 +71,8 @@ public class School {
             System.out.println("Je hebt de examen niet gehaald.");
         }
 
+        Menu.laatKeuzesZien();
+
     }
 
 
