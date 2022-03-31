@@ -50,22 +50,27 @@ public class Menu {
             if(userChoice == 1) {
                 //Show exams
                 school.printExams();
+                laatKeuzesZien();
             }else if(userChoice == 2) {
                 school.menuGetStudents();
+                laatKeuzesZien();
                 //Show list of students
             }else if (userChoice == 3) {
                 //Add new student
                 school.menuRemoveStudent();
+                laatKeuzesZien();
                 //Do Exam test
             }else if (userChoice == 6) {
                 school.menuHasStudentPassedExam();
-                
+                laatKeuzesZien();
             }else if (userChoice == 7) {
                 //Which exams did the student pass
                 school.menuStudentListPassedExams();
+                laatKeuzesZien();
             }else if (userChoice == 8) {
                 //Which student passed the most exams
                 school.studentWithMostPassedExams();
+                laatKeuzesZien();
             }else if (userChoice == 0) {
                 //Exit the program
                 System.exit(0);
