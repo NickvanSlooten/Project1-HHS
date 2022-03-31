@@ -3,16 +3,13 @@ package com.HHS;
 import java.util.ArrayList;
 
 public class Student {
-
-    private static ArrayList<Student> students = new ArrayList<>();
-    private ArrayList<Exam> passedExam = new ArrayList<>();
+    private ArrayList<Exam> passedExams = new ArrayList<>();
     private double number;
     private String name;
 
     public Student(double number, String name) {
         this.number = number;
         this.name = name;
-        students.add(this);
     }
 
     public double getNumber() {
@@ -31,8 +28,11 @@ public class Student {
         this.name = name;
     }
 
-    public static void removeStudent(Student student) {
-
+    public String toString(){
+        return String.format("%s / %d", name, (int)number);
+    }
+    public boolean hasPassedExam(Exam exam){
+        return passedExams.contains(exam);
     }
 
     public void getStudent() {
@@ -43,14 +43,11 @@ public class Student {
 
     }
 
-    public String toString() {
-        //return alle info student
-        return null;
-
+    public int getPassedExamsCount(){
+        return passedExams.size();
     }
 
-    public boolean hasPassedExam(Exam exam) {
-        //Check if exam passed then true else false    
-        return false;
+    public void addPassedExam(Exam exam) {
+        passedExams.add(exam);
     }
 }
