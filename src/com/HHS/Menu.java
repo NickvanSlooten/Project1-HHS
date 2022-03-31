@@ -21,23 +21,18 @@ public class Menu {
     }
 
     public static void laatKeuzesZien() {
-        KeuzesVullen();
-
-        if(!Keuzes.isEmpty()) {
-            for (int i = 0; i < Keuzes.size(); i++) {
+        if(Keuzes.isEmpty()) {
+            KeuzesVullen();
+        }
+        if(Keuzes.isEmpty()) {
+            System.out.println("Er zijn geen keuzes");
+        }
+        for (int i = 0; i < Keuzes.size(); i++) {
             System.out.println(Keuzes.get(i));
-    
-            }
-    
-            }else{
-    
-                System.out.println("Keuzes zijn leeg");
-            }
+        }
     }
 
     public static void mainMenu(School school) {
-     
-
         Scanner scanner = new Scanner(System.in);
         try {
             System.out.print("Keuze: ");
@@ -73,6 +68,7 @@ public class Menu {
                 //Exit the program
                 System.exit(0);
             }
+            laatKeuzesZien();
         }catch(Exception e) {
             System.out.println("Something went wrong: " + e.toString());
         }
