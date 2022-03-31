@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class School {
+    Scanner scan = new Scanner(System.in);
     private ArrayList<Student> students = new ArrayList<>();
     private ArrayList<Exam> exams = new ArrayList<>();
 
@@ -26,6 +27,37 @@ public class School {
             System.out.println(e.getName());
         }
     }
+
+    public void menuExamenAfnemen()
+    {
+        System.out.println("Voer uw studentnummer in: ");
+        long studentnummer = scan.nextLong();
+        scan.nextLine();
+
+        printExams();
+        System.out.println("Welk examen wilt uw afnemen?");
+        int examnummer = scan.nextInt();
+        scan.nextLine();
+
+        Exam exam = exams.get(examnummer - 1);
+
+        int aantalGoed = 0;
+
+        for(int i = 0; i < exam.getQuestions().size(); i++)
+        {
+            Question question = exam.getQuestions().get(i);
+            question.questionToString();
+
+            String antwoord = scan.nextLine();
+
+            if(question.questionCheck(antwoord))
+            {
+                aantalGoed++;
+            }
+
+        }
+    }
+
 
     public Student addStudent(String name)
     {
