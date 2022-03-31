@@ -156,7 +156,7 @@ public class School {
         }
     }
 
-    public void menuExam(){
+    public void menuAddExam(){
         Scanner scanner = new Scanner(System.in);
         System.out.println("welke examen wilt u toevoegen?");
         String nieuweExamen = scanner.nextLine();
