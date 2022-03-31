@@ -1,6 +1,7 @@
 package com.HHS;
 
 import java.util.ArrayList;
+import java.util.Locale;
 
 public class Question {
 
@@ -48,7 +49,8 @@ public class Question {
 
     public boolean questionCheck(String answer){
         boolean ans = false;
-        if (answer.equals(getAnswer())){
+        answer = answer.toLowerCase();
+        if (answer.equals(getAnswer().toLowerCase())){
             ans = true;
         }
         return ans;
