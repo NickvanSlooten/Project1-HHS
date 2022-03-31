@@ -6,9 +6,6 @@ public class Menu {
 
     
     public static void mainMenu(School school) {
-
-        School school = new School();
-
         System.out.println("1) Lijst met examens");
         System.out.println("2) Lijst met studenten");
         System.out.println("3) Nieuwe student inschrijven");
@@ -41,7 +38,7 @@ public class Menu {
                 
             }else if (userChoice == 7) {
                 //Which exams did the student pass
-                
+                school.menuStudentListPassedExams();
             }else if (userChoice == 8) {
                 //Which student passed the most exams
                 school.studentWithMostPassedExams();
