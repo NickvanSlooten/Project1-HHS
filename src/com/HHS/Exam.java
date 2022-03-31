@@ -28,7 +28,12 @@ public class Exam {
         updateMinimumCorrect();
     }
 
-    
+    public void didStudentPass(int numberRight){
+        if(getMinimumCorrect()<= numberRight){
+            System.out.println("Je bent geslaagd!");
+        }
+        else System.out.println("Helaas, je bent gezakt.");
+    }
 
     public int getMinimumCorrect() { return minimumCorrect; }
 
