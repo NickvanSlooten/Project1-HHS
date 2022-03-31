@@ -77,8 +77,9 @@ public class School {
             if (getStudent().hasPassedExam(exams.get(i))){;
                 str += exams.get(i) + " ";
             }
+            i++;
         }
-        if (str != "") {
+        if (!str.equals("")) {
             System.out.println(str);
         }
         else {
