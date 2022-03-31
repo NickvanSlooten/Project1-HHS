@@ -27,7 +27,7 @@ public class Menu {
 
     public static void laatKeuzesZien() {
         KeuzesVullen();
-        
+
         if(!Keuzes.isEmpty()) {
             for (int i = 0; i < Keuzes.size(); i++) {
             System.out.println(Keuzes.get(i));
@@ -55,11 +55,7 @@ public class Menu {
                 //Show list of students
             }else if (userChoice == 3) {
                 //Add new student
-
-            }else if (userChoice == 4) {
-                //Remove student
-    
-            }else if (userChoice == 5) {
+                school.menuRemoveStudent();
                 //Do Exam test
             }else if (userChoice == 6) {
                 school.menuHasStudentPassedExam();
