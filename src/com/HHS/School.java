@@ -22,7 +22,6 @@ public class School {
             System.out.println("Er zijn momenteel geen examens");
         }
         else for(Exam e: exams)
-
         {
             System.out.println(e.getName());
         }
@@ -40,6 +39,24 @@ public class School {
 
     public ArrayList<Student> getStudents(){
         return students;
+    }
+
+    public void menuAddStudent() {
+        System.out.println("Hoe heet de student? ");
+        System.out.print("Naam: ");
+        Scanner scanner = new Scanner(System.in);
+        String naam = scanner.nextLine();
+        Student newStudent = addStudent(naam);
+        System.out.println("Nieuwe student met student nummer " + newStudent.getNumber() + " toegevoegd.");
+    }
+
+    public void menuRemoveStudent() {
+        System.out.println("Voer het student nummer in van de student die u wil verwijderen. ");
+        Student s = getStudentByInput();
+        if (s != null) {
+            removeStudent(s);
+            System.out.println("Student verwijderd.");
+        }
     }
 
     public Student studentWithMostPassedExams() {
