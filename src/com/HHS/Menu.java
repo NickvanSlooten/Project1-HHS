@@ -1,26 +1,38 @@
 package com.HHS;
 
 import java.util.Scanner;
-
+import java.util.ArrayList;
 public class Menu {
 
-    
+
+
+
+
+     // Create an ArrayList object   
+     public static ArrayList<String>  Keuzes = new ArrayList<>();
+    public ArrayList <String> KeuzesVullen() {
+       Keuzes.add("1) Lijst met examens");
+       Keuzes.add("2) Lijst met studenten");
+       Keuzes.add("3) Nieuwe student inschrijven");
+       Keuzes.add("4) Student verwijderen");
+       Keuzes.add("5) Examen afnemen");
+       Keuzes.add("6) Is student geslaagd voor test?");
+       Keuzes.add("7) Welke examens heeft student gehaald?");
+       Keuzes.add("8) Welke student heeft de meeste examens gehaald?");
+       Keuzes.add("0) Exit");
+        return Keuzes;
+
+
+    }
+
+
     public static void mainMenu(School school) {
 
-        School school = new School();
-
-        System.out.println("1) Lijst met examens");
-        System.out.println("2) Lijst met studenten");
-        System.out.println("3) Nieuwe student inschrijven");
-        System.out.println("4) Student verwijderen");
-        System.out.println("5) Examen afnemen");
-        System.out.println("6) Is student geslaagd voor test?");
-        System.out.println("7) Welke examens heeft student gehaald?");
-        System.out.println("8) Welke student heeft de meeste examens gehaald?");
-        System.out.println("0) Exit");
-        Scanner scanner = new Scanner(System.in);
-        try {
-            System.out.print("Keuze: ");
+        for (int i = 0; i < Keuzes.size(); i++) {
+            
+        }
+    
+        try (Scanner scanner = new Scanner(System.in)) {
             Integer userChoice = scanner.nextInt();
             if(userChoice == 1) {
                 //Show exams
