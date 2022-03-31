@@ -10,7 +10,7 @@ public class Menu {
 
      // Create an ArrayList object   
      public static ArrayList<String>  Keuzes = new ArrayList<>();
-    public ArrayList <String> KeuzesVullen() {
+    public static ArrayList <String> KeuzesVullen() {
        Keuzes.add("1) Lijst met examens");
        Keuzes.add("2) Lijst met studenten");
        Keuzes.add("3) Nieuwe student inschrijven");
@@ -27,15 +27,21 @@ public class Menu {
 
 
     public static void mainMenu(School school) {
-        System.out.println("1) Lijst met examens");
-        System.out.println("2) Lijst met studenten");
-        System.out.println("3) Nieuwe student inschrijven");
-        System.out.println("4) Student verwijderen");
-        System.out.println("5) Examen afnemen");
-        System.out.println("6) Is student geslaagd voor test?");
-        System.out.println("7) Welke examens heeft student gehaald?");
-        System.out.println("8) Welke student heeft de meeste examens gehaald?");
-        System.out.println("0) Exit");
+        //Keuzes laten zien
+        KeuzesVullen();
+
+        if(!Keuzes.isEmpty()) {
+        for (int i = 0; i < Keuzes.size(); i++) {
+        System.out.println(Keuzes.get(i));
+
+        }
+
+        }else{
+
+            System.out.println("Keuzes zijn leeg");
+        }
+        
+
         Scanner scanner = new Scanner(System.in);
         try {
             System.out.print("Keuze: ");
@@ -48,12 +54,12 @@ public class Menu {
                 //Show list of students
             }else if (userChoice == 3) {
                 //Add new student
+                
             }else if (userChoice == 4) {
                 //Remove student
     
             }else if (userChoice == 5) {
                 //Do Exam test
-                
             }else if (userChoice == 6) {
                 school.menuHasStudentPassedExam();
                 
