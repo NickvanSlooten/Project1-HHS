@@ -27,9 +27,10 @@ public class Menu {
                 //Show list of students
             }else if (userChoice == 3) {
                 //Add new student
+                school.menuAddStudent();
             }else if (userChoice == 4) {
                 //Remove student
-    
+                school.menuRemoveStudent();
             }else if (userChoice == 5) {
                 //Do Exam test
                 
