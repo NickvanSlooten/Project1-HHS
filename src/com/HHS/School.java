@@ -155,4 +155,27 @@ public class School {
             }
         }
     }
+
+    public void menuExam(){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("welke examen wilt u toevoegen?");
+        String nieuweExamen = scanner.nextLine();
+
+        addExam(nieuweExamen);
+        System.out.println("Examen verwijder: " + nieuweExamen);
+
+    }
+
+    public void menuRemoveExam(){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Welke examen wilt u verwijder?");
+        String verwijderExamen = scanner.nextLine();
+
+        for (Exam i : exams){
+            if (verwijderExamen.equals(i.getName())) {
+                menuRemoveExam();
+                System.out.println("Dit examen is verwijderd: " + verwijderExamen);
+            }
+        }
+    }
 }
