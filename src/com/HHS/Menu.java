@@ -19,10 +19,10 @@ public class Menu {
        Keuzes.add("6) Is student geslaagd voor test?");
        Keuzes.add("7) Welke examens heeft student gehaald?");
        Keuzes.add("8) Welke student heeft de meeste examens gehaald?");
+       Keuzes.add("9) Examen toevoegen");
+       Keuzes.add("10) Examen verwijderen");
        Keuzes.add("0) Exit");
-        return Keuzes;
-
-
+       return Keuzes;
     }
 
 
@@ -69,6 +69,12 @@ public class Menu {
             }else if (userChoice == 8) {
                 //Which student passed the most exams
                 school.studentWithMostPassedExams();
+            }else if (userChoice == 9) {
+                //Which student passed the most exams
+                school.menuAddExam();
+            }else if (userChoice == 10) {
+                //Which student passed the most exams
+                school.menuRemoveExam();
             }else if (userChoice == 0) {
                 //Exit the program
                 System.exit(0);

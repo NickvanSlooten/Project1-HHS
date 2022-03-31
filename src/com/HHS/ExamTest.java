@@ -8,7 +8,6 @@ class ExamTest {
 
     @Test
     void createQuestion() {
-
         Exam wiskunde = new Exam("Wiskunde");
 
         Question expected = new Question("Hoeveel Watermeloenen passen er in een auto",
