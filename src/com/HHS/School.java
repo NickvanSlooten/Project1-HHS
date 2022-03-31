@@ -22,7 +22,6 @@ public class School {
             System.out.println("Er zijn momenteel geen examens");
         }
         else for(Exam e: exams)
-
         {
             System.out.println(e.getName());
         }
@@ -42,6 +41,24 @@ public class School {
         return students;
     }
 
+    public void menuAddStudent() {
+        System.out.println("Hoe heet de student? ");
+        System.out.print("Naam: ");
+        Scanner scanner = new Scanner(System.in);
+        String naam = scanner.nextLine();
+        Student newStudent = addStudent(naam);
+        System.out.println("Nieuwe student met student nummer " + newStudent.getNumber() + " toegevoegd.");
+    }
+
+    public void menuRemoveStudent() {
+        System.out.println("Voer het student nummer in van de student die u wil verwijderen. ");
+        Student s = getStudentByInput();
+        if (s != null) {
+            removeStudent(s);
+            System.out.println("Student verwijderd.");
+        }
+    }
+
     public Student studentWithMostPassedExams() {
         Student most = null;
         for (Student s : students) {
@@ -58,6 +75,7 @@ public class School {
         Student mostPassed = studentWithMostPassedExams();
         System.out.println("Student met meeste gehaalde examens: " + mostPassed.toString());
     }
+  
     public Student getStudent() {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Typ het studentnummer van de student: ");
