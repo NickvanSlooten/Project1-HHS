@@ -3,13 +3,8 @@ package com.HHS;
 import java.util.Scanner;
 import java.util.ArrayList;
 public class Menu {
-
-
-
-
-
      // Create an ArrayList object   
-     public static ArrayList<String>  Keuzes = new ArrayList<>();
+    public static ArrayList<String>  Keuzes = new ArrayList<>();
     public static ArrayList <String> KeuzesVullen() {
        Keuzes.add("1) Lijst met examens");
        Keuzes.add("2) Lijst met studenten");
@@ -56,6 +51,8 @@ public class Menu {
             }else if (userChoice == 3) {
                 //Add new student
                 school.menuRemoveStudent();
+            }else if (userChoice == 5) {
+                school.menuExamenAfnemen();
                 //Do Exam test
             }else if (userChoice == 6) {
                 school.menuHasStudentPassedExam();
