@@ -25,22 +25,23 @@ public class Menu {
        return Keuzes;
     }
 
-
-    public static void mainMenu(School school) {
-        //Keuzes laten zien
+    public static void laatKeuzesZien() {
         KeuzesVullen();
 
         if(!Keuzes.isEmpty()) {
-        for (int i = 0; i < Keuzes.size(); i++) {
-        System.out.println(Keuzes.get(i));
+            for (int i = 0; i < Keuzes.size(); i++) {
+            System.out.println(Keuzes.get(i));
+    
+            }
+    
+            }else{
+    
+                System.out.println("Keuzes zijn leeg");
+            }
+    }
 
-        }
-
-        }else{
-
-            System.out.println("Keuzes zijn leeg");
-        }
-        
+    public static void mainMenu(School school) {
+     
 
         Scanner scanner = new Scanner(System.in);
         try {
@@ -54,11 +55,7 @@ public class Menu {
                 //Show list of students
             }else if (userChoice == 3) {
                 //Add new student
-                school.menuAddStudent();
-            }else if (userChoice == 4) {
-                //Remove student
                 school.menuRemoveStudent();
-            }else if (userChoice == 5) {
                 //Do Exam test
             }else if (userChoice == 6) {
                 school.menuHasStudentPassedExam();
