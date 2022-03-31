@@ -22,6 +22,7 @@ public class School {
             System.out.println("Er zijn momenteel geen examens");
         }
         else for(Exam e: exams)
+
         {
             System.out.println(e.getName());
         }

@@ -15,6 +15,10 @@ public class Main {
         s2.addPassedExam(ex1);
         //school.menuStudentWithMostPassedExams();
         //school.menuHasStudentPassedExam();
+        while(true)
+        {
+            Menu.mainMenu(school);
+        }
     }
 
    
