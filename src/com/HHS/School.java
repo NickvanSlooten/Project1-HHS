@@ -52,7 +52,7 @@ public class School {
 
     public void menuRemoveStudent() {
         System.out.println("Voer het student nummer in van de student die u wil verwijderen. ");
-        Student s = getStudentByInput();
+        Student s = getStudent();
         if (s != null) {
             removeStudent(s);
             System.out.println("Student verwijderd.");
