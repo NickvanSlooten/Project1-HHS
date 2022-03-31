@@ -58,6 +58,41 @@ public class School {
         Student mostPassed = studentWithMostPassedExams();
         System.out.println("Student met meeste gehaalde examens: " + mostPassed.toString());
     }
+    public Student getStudentByInput() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Typ het studentnummer van de student: ");
+        long studentNumber = scanner.nextLong();
+        Student returnstudent = null;
+        for (Student student : students) {
+            if (student.getNumber() == studentNumber) {
+                returnstudent = student;
+            }
+        }
+        if (returnstudent == null){
+            System.out.println("Er zit geen student met dit studentnummer in het systeem!");
+        }
+        return returnstudent;
+    }
+
+    public void menuStudentListPassedExams(){
+        int i = 0;
+        String str = "";
+        Student s = getStudentByInput();
+        if (s == null)
+            return;
+        for (Exam exam : exams) {
+            if (s.hasPassedExam(exam)){;
+                str += exam.getName() + " ";
+            }
+            i++;
+        }
+        if (!str.equals("")) {
+            System.out.println(str);
+        }
+        else {
+            System.out.println("Deze student heeft geen examen behaald.");
+        }
+    }
 
     public void menuGetStudents() {
         for (int i = 0; i < students.size(); i++) {
