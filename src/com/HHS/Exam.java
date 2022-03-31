@@ -28,6 +28,14 @@ public class Exam {
         updateMinimumCorrect();
     }
 
+    public boolean didStudentPass(int numberRight){
+        boolean passed = false;
+        if(getMinimumCorrect()<= numberRight){
+            passed = true;
+        }
+        return passed;
+    }
+
     public int getMinimumCorrect() { return minimumCorrect; }
 
     public void updateMinimumCorrect(){

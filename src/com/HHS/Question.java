@@ -1,5 +1,7 @@
 package com.HHS;
 
+import java.util.ArrayList;
+
 public class Question {
 
     private String question;
@@ -39,4 +41,19 @@ public class Question {
     public void setAnswer(String answer) {
         this.answer = answer;
     }
+
+    public String questionToString(){
+        return getQuestion() + "\n" + getExplanation() ;
+    }
+
+    public boolean questionCheck(String answer){
+        boolean ans = false;
+        if (answer.equals(getAnswer())){
+            ans = true;
+        }
+        return ans;
+    }
+
+
 }
+

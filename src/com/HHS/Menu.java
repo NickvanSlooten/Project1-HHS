@@ -3,13 +3,8 @@ package com.HHS;
 import java.util.Scanner;
 import java.util.ArrayList;
 public class Menu {
-
-
-
-
-
      // Create an ArrayList object   
-     public static ArrayList<String>  Keuzes = new ArrayList<>();
+    public static ArrayList<String>  Keuzes = new ArrayList<>();
     public static ArrayList <String> KeuzesVullen() {
        Keuzes.add("1) Lijst met examens");
        Keuzes.add("2) Lijst met studenten");
@@ -19,10 +14,10 @@ public class Menu {
        Keuzes.add("6) Is student geslaagd voor test?");
        Keuzes.add("7) Welke examens heeft student gehaald?");
        Keuzes.add("8) Welke student heeft de meeste examens gehaald?");
+       Keuzes.add("9) Examen toevoegen");
+       Keuzes.add("10) Examen verwijderen");
        Keuzes.add("0) Exit");
-        return Keuzes;
-
-
+       return Keuzes;
     }
 
     public static void laatKeuzesZien() {
@@ -58,7 +53,8 @@ public class Menu {
             }else if (userChoice == 3) {
                 //Add new student
                 school.menuRemoveStudent();
-                laatKeuzesZien();
+            }else if (userChoice == 5) {
+                school.menuExamenAfnemen();
                 //Do Exam test
             }else if (userChoice == 6) {
                 school.menuHasStudentPassedExam();
@@ -70,7 +66,12 @@ public class Menu {
             }else if (userChoice == 8) {
                 //Which student passed the most exams
                 school.studentWithMostPassedExams();
-                laatKeuzesZien();
+            }else if (userChoice == 9) {
+                //Which student passed the most exams
+                school.menuAddExam();
+            }else if (userChoice == 10) {
+                //Which student passed the most exams
+                school.menuRemoveExam();
             }else if (userChoice == 0) {
                 //Exit the program
                 System.exit(0);
