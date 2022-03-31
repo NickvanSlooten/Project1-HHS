@@ -58,7 +58,7 @@ public class School {
         Student mostPassed = studentWithMostPassedExams();
         System.out.println("Student met meeste gehaalde examens: " + mostPassed.toString());
     }
-    public Student getStudent() {
+    public Student getStudentByInput() {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Typ het studentnummer van de student: ");
         long studentNumber = scanner.nextLong();
@@ -74,12 +74,15 @@ public class School {
         return returnstudent;
     }
 
-    public void studentHasPassedExam(){
+    public void menuStudentListPassedExams(){
         int i = 0;
         String str = "";
+        Student s = getStudentByInput();
+        if (s == null)
+            return;
         for (Exam exam : exams) {
-            if (getStudent().hasPassedExam(exams.get(i))){;
-                str += exams.get(i) + " ";
+            if (s.hasPassedExam(exam)){;
+                str += exam.getName() + " ";
             }
             i++;
         }
@@ -87,7 +90,8 @@ public class School {
             System.out.println(str);
         }
         else {
-            System.out.println("Deze student heeft geen examen behaald.");}
+            System.out.println("Deze student heeft geen examen behaald.");
+        }
     }
 
     public void menuGetStudents() {
