@@ -49,7 +49,7 @@ public class Question {
 
     public boolean questionCheck(String answer){
         boolean ans = false;
-        answer.toLowerCase();
+        answer = answer.toLowerCase();
         if (answer.equals(getAnswer().toLowerCase())){
             ans = true;
         }
