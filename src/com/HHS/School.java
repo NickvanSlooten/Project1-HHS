@@ -30,9 +30,7 @@ public class School {
 
     public void menuExamenAfnemen()
     {
-        System.out.println("Voer uw studentnummer in: ");
-        long studentnummer = scan.nextLong();
-        scan.nextLine();
+        Student student = getStudentByInput();
 
         printExams();
         System.out.println("Welk examen wilt uw afnemen?");
@@ -46,16 +44,33 @@ public class School {
         for(int i = 0; i < exam.getQuestions().size(); i++)
         {
             Question question = exam.getQuestions().get(i);
-            question.questionToString();
+            System.out.println(question.questionToString());
 
             String antwoord = scan.nextLine();
 
             if(question.questionCheck(antwoord))
             {
+                System.out.println("Goed gedaan!");
                 aantalGoed++;
+            }
+            else
+            {
+                System.out.println("Fout. Het goede antwoord is: ");
+                System.out.println(question.getAnswer());
             }
 
         }
+
+        if(exam.didStudentPass(aantalGoed))
+        {
+            System.out.println("Je bent geslaagd!");
+            student.addPassedExam(exam);
+        }
+        else
+        {
+            System.out.println("Je hebt de examen niet gehaald.");
+        }
+
     }
 
 

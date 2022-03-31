@@ -59,7 +59,7 @@ public class Menu {
                 //Remove student
                 school.menuRemoveStudent();
             }else if (userChoice == 5) {
-                //Do Exam test
+                school.menuExamenAfnemen();
             }else if (userChoice == 6) {
                 school.menuHasStudentPassedExam();
                 
