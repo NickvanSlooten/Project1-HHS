@@ -28,6 +28,8 @@ public class Exam {
         updateMinimumCorrect();
     }
 
+    
+
     public int getMinimumCorrect() { return minimumCorrect; }
 
     public void updateMinimumCorrect(){
