@@ -45,6 +45,9 @@ public class Menu {
                 //Show list of students
             }else if (userChoice == 3) {
                 //Add new student
+                school.menuAddStudent();
+            }else if (userChoice == 4) {
+                //Remove Student
                 school.menuRemoveStudent();
             }else if (userChoice == 5) {
                 school.menuExamenAfnemen();
