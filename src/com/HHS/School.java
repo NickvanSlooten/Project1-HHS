@@ -22,9 +22,9 @@ public class School {
         if(exams.size() == 0) {
             System.out.println("Er zijn momenteel geen examens");
         }
-        else for(Exam e: exams)
+        else for(int i = 0; i < exams.size(); i++)
         {
-            System.out.println(e.getName());
+            System.out.println((i + 1)+") " + exams.get(i).getName());
         }
     }
 
@@ -39,29 +39,7 @@ public class School {
 
         Exam exam = exams.get(examnummer - 1);
 
-        int aantalGoed = 0;
-
-        for(int i = 0; i < exam.getQuestions().size(); i++)
-        {
-            Question question = exam.getQuestions().get(i);
-            System.out.println(question.questionToString());
-
-            String antwoord = scan.nextLine();
-
-            if(question.questionCheck(antwoord))
-            {
-                System.out.println("Goed gedaan!");
-                aantalGoed++;
-            }
-            else
-            {
-                System.out.println("Fout. Het goede antwoord is: ");
-                System.out.println(question.getAnswer());
-            }
-
-        }
-
-        if(exam.didStudentPass(aantalGoed))
+        if(exam.examenAfnemen())
         {
             System.out.println("Je bent geslaagd!");
             student.addPassedExam(exam);
