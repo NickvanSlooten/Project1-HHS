@@ -31,6 +31,21 @@ public class Exam {
         return questions;
     }
 
+    public void createQuestion()
+    {
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Wat is de vraag?");
+        String question = scan.nextLine();
+
+        System.out.println("Wat is het antwoord");
+        String answer = scan.nextLine();
+
+        System.out.println("Wat is de uitleg?");
+        String explanation = scan.nextLine();
+
+        createQuestion(question, explanation, answer);
+    }
+
     public void createQuestion(String question, String explanation, String answer) {
         questions.add(new Question(question, explanation, answer));
         updateMinimumCorrect();
