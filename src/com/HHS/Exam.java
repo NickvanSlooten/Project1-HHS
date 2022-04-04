@@ -1,6 +1,7 @@
 package com.HHS;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Exam {
     private String name;
@@ -27,6 +28,35 @@ public class Exam {
         questions.add(new Question(question, explanation, answer));
         updateMinimumCorrect();
     }
+
+    public boolean examenAfnemen()
+    {
+        Scanner scan = new Scanner(System.in);
+        int aantalGoed = 0;
+
+        for(int i = 0; i < getQuestions().size(); i++)
+        {
+            Question question = getQuestions().get(i);
+            System.out.println(question.questionToString());
+
+            String antwoord = scan.nextLine();
+
+            if(question.questionCheck(antwoord))
+            {
+                System.out.println("Goed gedaan!");
+                aantalGoed++;
+            }
+            else
+            {
+                System.out.println("Fout. Het goede antwoord is: ");
+                System.out.println(question.getAnswer());
+            }
+
+        }
+
+        return didStudentPass(aantalGoed);
+    }
+
 
     public boolean didStudentPass(int numberRight){
         boolean passed = false;
