@@ -20,7 +20,7 @@ public class Menu {
        Keuzes.add("0) Exit");
        return Keuzes;
     }
-
+    //toont alle opties van het programma
     public static void laatKeuzesZien() {
         if(Keuzes.isEmpty()) {
             KeuzesVullen();
@@ -33,6 +33,7 @@ public class Menu {
         }
     }
 
+    //Neemt de gebruikers keuze mee en voert de juiste functies uit
     public static void mainMenu(School school) {
         Scanner scanner = new Scanner(System.in);
         try {

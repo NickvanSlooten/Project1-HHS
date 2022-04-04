@@ -13,6 +13,7 @@ public class School {
         return exams.get(exams.size()-1);
     }
 
+    //Voegt een examen toe
     public Exam addExam() {
         Exam examen = new Exam();
         for (Exam e : exams){
@@ -25,6 +26,7 @@ public class School {
         return exams.get(exams.size()-1);
     }
 
+    //Voegt de vragen van de examens toe
     public void menuAddQuestion()
     {
         printExams();
@@ -48,10 +50,7 @@ public class School {
         }
     }
 
-    public void removeExam(Exam exam) {
-        exams.remove(exam);
-    }
-
+    //geeft de lijst met examens
     public void printExams()
     {
         if(exams.size() == 0) {
@@ -63,6 +62,7 @@ public class School {
         }
     }
 
+    //neemt het examan af
     public void menuExamenAfnemen()
     {
         Student student = getStudentByInput();
@@ -85,7 +85,6 @@ public class School {
         }
 
     }
-
 
     public Student addStudent(String name)
     {
@@ -136,6 +135,7 @@ public class School {
         return most;
     }
 
+    //geeft de student met het meest behaalde examens
     public void menuStudentWithMostPassedExams(){
         Student mostPassed = studentWithMostPassedExams();
         if(mostPassed == null){
@@ -161,6 +161,7 @@ public class School {
         return returnstudent;
     }
 
+    //Geeft alle examens die een student heeft gehaald
     public void menuStudentListPassedExams(){
         Student s = getStudentByInput();
         if (s == null) {
@@ -176,6 +177,7 @@ public class School {
         }
     }
 
+    //checkt of een student een examen heeft gehaald
     public void menuHasStudentPassedExam() {
         Student selectedStudent = getStudentByInput();
         Scanner scanner = new Scanner(System.in);
