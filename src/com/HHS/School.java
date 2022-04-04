@@ -58,6 +58,12 @@ public class School {
         return students.get(students.size()-1);
     }
 
+    public Student addStudent()
+    {
+        students.add(new Student());
+        return students.get(students.size()-1);
+    }
+
     public void removeStudent(Student student){
         students.remove(student);
     }
@@ -67,11 +73,7 @@ public class School {
     }
 
     public void menuAddStudent() {
-        System.out.println("Hoe heet de student? ");
-        System.out.print("Naam: ");
-        Scanner scanner = new Scanner(System.in);
-        String naam = scanner.nextLine();
-        Student newStudent = addStudent(naam);
+        Student newStudent = addStudent();
         System.out.println("Nieuwe student met student nummer " + newStudent.getNumber() + " toegevoegd.");
     }
 

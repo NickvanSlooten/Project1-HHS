@@ -1,6 +1,7 @@
 package com.HHS;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Student {
 
@@ -9,9 +10,18 @@ public class Student {
     private static long nextNumber = 20000000;
     private String name;
 
-  public Student(String name){
+    public Student(String name){
         this.number = nextNumber();
         this.name = name;
+    }
+
+    public Student(){
+        System.out.println("Hoe heet de student? ");
+        System.out.print("Naam: ");
+        Scanner scanner = new Scanner(System.in);
+        String naam = scanner.nextLine();
+        this.number = nextNumber();
+        this.name = naam;
     }
 
     public long nextNumber(){

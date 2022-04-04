@@ -60,7 +60,7 @@ public class Menu {
                 school.menuStudentListPassedExams();
             }else if (userChoice == 8) {
                 //Which student passed the most exams
-                school.studentWithMostPassedExams();
+                school.menuStudentWithMostPassedExams();
             }else if (userChoice == 9) {
                 //Which student passed the most exams
                 school.menuAddExam();
