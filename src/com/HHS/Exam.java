@@ -23,14 +23,12 @@ public class Exam {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
 
     public ArrayList<Question> getQuestions() {
         return questions;
     }
 
+    //Maakt een vraag aan met antwoord en beschrijving vanuit een input
     public void createQuestion()
     {
         Scanner scan = new Scanner(System.in);
@@ -46,11 +44,13 @@ public class Exam {
         createQuestion(question, explanation, answer);
     }
 
+    //Maakt een vraag aan met antwoord en beschrijving vanuit de hardcode
     public void createQuestion(String question, String explanation, String answer) {
         questions.add(new Question(question, explanation, answer));
         updateMinimumCorrect();
     }
 
+    //Neemt het examen af en geeft feedback naarmate je antwoord
     public boolean examenAfnemen()
     {
         Scanner scan = new Scanner(System.in);
@@ -79,7 +79,7 @@ public class Exam {
         return didStudentPass(aantalGoed);
     }
 
-
+    //checkt of een student een examen heeft gehaald
     public boolean didStudentPass(int numberRight){
         boolean passed = false;
         if(getMinimumCorrect()<= numberRight){
@@ -90,6 +90,7 @@ public class Exam {
 
     public int getMinimumCorrect() { return minimumCorrect; }
 
+    //update het aantal vragen die je correct moet hebben in vergelijking met het totaal aantal vragen
     public void updateMinimumCorrect(){
         minimumCorrect = (int)((questions.size() * 0.70) + 0.5);
     }

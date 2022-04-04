@@ -23,30 +23,22 @@ public class Question {
         return question;
     }
 
-    public void setQuestion(String question) {
-        this.question = question;
-    }
 
     public String getExplanation() {
         return explanation;
     }
 
-    public void setExplanation(String explanation) {
-        this.explanation = explanation;
-    }
 
     public String getAnswer() {
         return answer;
     }
 
-    public void setAnswer(String answer) {
-        this.answer = answer;
-    }
 
     public String questionToString(){
         return getQuestion() + "\n" + getExplanation() ;
     }
 
+    // geeft terug of je een antwoord goed hebt ja of nee
     public boolean questionCheck(String answer){
         boolean ans = false;
         answer = answer.toLowerCase();

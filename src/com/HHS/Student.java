@@ -24,6 +24,7 @@ public class Student {
         this.name = naam;
     }
 
+    //geeft de behaalde examens
     public void listPassedExams() {
         String str = "";
         for (Exam e : passedExams) {
@@ -42,14 +43,6 @@ public class Student {
 
     public long getNumber() {
         return number;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public String toString(){

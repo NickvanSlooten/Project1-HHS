@@ -1,7 +1,7 @@
 package com.HHS;
 
 public class Main {
-
+    //dummydata vragen
     public static void main(String[] args) {
         School school = new School();
 	    Exam ex1 = school.addExam("rekenen");
@@ -30,6 +30,7 @@ public class Main {
         ex2.createQuestion("Wat doet @before in Junit test? \n A) Dit zorgt ervoor dat alles na @test wordt gerunt \n B) Dit zorgt ervoor dat alles voor @test ook gerunt wordt \n C) B en D zijn beide goed \n D) Dit zorgt ervoor dat alles gerunt wordt ", "Tip: Denk aan de Nederlanse vertaling.", "B");
         ex2.createQuestion("Waarvoor worden interfaces  gebruikt? \n A) B en D zijn beide goed \n B) Een interface is een koppeling tussen diverse classes \n C) Een interface is een verkleining tussen diverse classes\n D) Een interface is het tegenovergestelde van een class", "Tip: denk aan het Hoorcollege.", "B");
 
+        //dummydata studenten
         Student s1 = school.addStudent("Student 1");
         Student s2 = school.addStudent("Student 2");
         Student s3 = school.addStudent("Student 3");
