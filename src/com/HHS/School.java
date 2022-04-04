@@ -191,13 +191,13 @@ public class School {
     public void menuRemoveExam(){
         Scanner scanner = new Scanner(System.in);
         System.out.println("Welk examen wilt u verwijderen?");
-        String verwijderExamen = scanner.nextLine();
+        printExams();
+        if (exams.size() == 0)
+            return;
+        int examenid = scanner.nextInt()-1;
 
-        for (Exam i : exams){
-            if (verwijderExamen.equals(i.getName())) {
-                menuRemoveExam();
-                System.out.println("Dit examen is verwijderd: " + verwijderExamen);
-            }
+        if (examenid >= 0 && examenid < exams.size()) {
+            exams.remove(examenid);
         }
     }
 }
