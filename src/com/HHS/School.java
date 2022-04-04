@@ -14,7 +14,14 @@ public class School {
     }
 
     public Exam addExam() {
-        exams.add(new Exam());
+        Exam examen = new Exam();
+        for (Exam e : exams){
+            if (e.getName().equals(examen.getName())){
+                return null;
+            }
+        }
+        exams.add(examen);
+
         return exams.get(exams.size()-1);
     }
 
@@ -173,6 +180,9 @@ public class School {
 
     public void menuAddExam(){
         Exam n = addExam();
+        if (n == null){
+            System.out.println("Dit examen bestaat al.");
+        }else
         System.out.println("Examen met naam: " + n.getName() + " toegevoegd");
     }
 
