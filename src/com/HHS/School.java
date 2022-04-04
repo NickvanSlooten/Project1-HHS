@@ -25,6 +25,29 @@ public class School {
         return exams.get(exams.size()-1);
     }
 
+    public void menuAddQuestion()
+    {
+        printExams();
+        System.out.println("Voor welke examen wilt uw een vraag toevoegen?");
+
+        Exam e = exams.get(scan.nextInt()- 1);
+        scan.nextLine();
+
+        boolean vragenToevoegen = true;
+
+        while(vragenToevoegen)
+        {
+            e.createQuestion();
+
+            System.out.println("Wilt uw stoppen met vragen toevoegen? (Y/N)");
+            String input = scan.nextLine();
+            if(input.equals("Y"))
+            {
+                vragenToevoegen = false;
+            }
+        }
+    }
+
     public void removeExam(Exam exam) {
         exams.remove(exam);
     }
