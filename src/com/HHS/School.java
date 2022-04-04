@@ -95,7 +95,10 @@ public class School {
         Student most = null;
         for (Student s : students) {
             if (most == null){
-                most = s;
+               if (s.getPassedExamsCount() > 0){
+                   most = s;
+               }
+
             }else if (most.getPassedExamsCount() < s.getPassedExamsCount()){
                 most = s;
             }
@@ -105,7 +108,12 @@ public class School {
 
     public void menuStudentWithMostPassedExams(){
         Student mostPassed = studentWithMostPassedExams();
-        System.out.println("Student met meeste gehaalde examens: " + mostPassed.toString());
+        if(mostPassed == null){
+            System.out.println("Er is geen student die een examen heeft behaald.");
+        }
+        else {
+            System.out.println("Student met meeste gehaalde examens: " + mostPassed.toString());
+        }
     }
     public Student getStudentByInput() {
         Scanner scanner = new Scanner(System.in);
@@ -148,7 +156,7 @@ public class School {
             System.out.println("Selecteer het examen waarvan je de resultaten wilt zien: ");
             printExams();
             System.out.print("Keuze: ");
-            int keuze = scanner.nextInt();
+            int keuze = scanner.nextInt()-1;
             if (keuze >= 0 && keuze < exams.size()) {
                 if (selectedStudent.hasPassedExam(exams.get(keuze))) {
                     System.out.println("De student is geslaagd voor dit examen.");
