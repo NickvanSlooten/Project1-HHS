@@ -12,6 +12,13 @@ public class Exam {
         this.name = name;
     }
 
+    public Exam(){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Welk examen wilt u toevoegen?");
+        String nieuweExamen = scanner.nextLine();
+        this.name = nieuweExamen;
+    }
+
     public String getName() {
         return name;
     }
