@@ -179,11 +179,13 @@ public class School {
     }
 
     public void menuAddExam(){
+
         Exam n = addExam();
         if (n == null){
             System.out.println("Dit examen bestaat al.");
         }else
         System.out.println("Examen met naam: " + n.getName() + " toegevoegd");
+
     }
 
     public void menuRemoveExam(){
