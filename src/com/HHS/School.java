@@ -132,25 +132,11 @@ public class School {
     }
 
     public void menuStudentListPassedExams(){
-        int i = 0;
-        String str = "";
         Student s = getStudentByInput();
         if (s == null) {
             System.out.println("Dit studentnummer bestaat niet.");
-        }
-        else {
-            for (Exam exam : exams) {
-                if (s.hasPassedExam(exam)) {
-                    ;
-                    str += exam.getName() + " ";
-                }
-                i++;
-            }
-            if (!str.equals("")) {
-                System.out.println(str);
-            } else {
-                System.out.println("Deze student heeft geen examen behaald.");
-            }
+        }else{
+            s.listPassedExams();
         }
     }
 
@@ -168,9 +154,7 @@ public class School {
         }
         else {
             System.out.println("Selecteer het examen waarvan je de resultaten wilt zien: ");
-
             printExams();
-
             System.out.print("Keuze: ");
             int keuze = scanner.nextInt()-1;
             if (keuze >= 0 && keuze < exams.size()) {
