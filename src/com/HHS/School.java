@@ -88,7 +88,10 @@ public class School {
         Student most = null;
         for (Student s : students) {
             if (most == null){
-                most = s;
+               if (s.getPassedExamsCount() > 0){
+                   most = s;
+               }
+
             }else if (most.getPassedExamsCount() < s.getPassedExamsCount()){
                 most = s;
             }
@@ -98,7 +101,12 @@ public class School {
 
     public void menuStudentWithMostPassedExams(){
         Student mostPassed = studentWithMostPassedExams();
-        System.out.println("Student met meeste gehaalde examens: " + mostPassed.toString());
+        if(mostPassed == null){
+            System.out.println("Er is geen student die een examen heeft behaald.");
+        }
+        else {
+            System.out.println("Student met meeste gehaalde examens: " + mostPassed.toString());
+        }
     }
     public Student getStudentByInput() {
         Scanner scanner = new Scanner(System.in);
@@ -120,19 +128,22 @@ public class School {
         int i = 0;
         String str = "";
         Student s = getStudentByInput();
-        if (s == null)
-            return;
-        for (Exam exam : exams) {
-            if (s.hasPassedExam(exam)){;
-                str += exam.getName() + " ";
-            }
-            i++;
-        }
-        if (!str.equals("")) {
-            System.out.println(str);
+        if (s == null) {
+            System.out.println("Dit studentnummer bestaat niet.");
         }
         else {
-            System.out.println("Deze student heeft geen examen behaald.");
+            for (Exam exam : exams) {
+                if (s.hasPassedExam(exam)) {
+                    ;
+                    str += exam.getName() + " ";
+                }
+                i++;
+            }
+            if (!str.equals("")) {
+                System.out.println(str);
+            } else {
+                System.out.println("Deze student heeft geen examen behaald.");
+            }
         }
     }
 
@@ -158,15 +169,11 @@ public class School {
         }
         else {
             System.out.println("Selecteer het examen waarvan je de resultaten wilt zien: ");
-            int i = 0;
-            for (Exam exam : exams) {
-                System.out.print(i);
-                System.out.print(") ");
-                System.out.println(exam.getName());
-                i++;
-            }
+
+            printExams();
+
             System.out.print("Keuze: ");
-            int keuze = scanner.nextInt();
+            int keuze = scanner.nextInt()-1;
             if (keuze >= 0 && keuze < exams.size()) {
                 if (selectedStudent.hasPassedExam(exams.get(keuze))) {
                     System.out.println("De student is geslaagd voor dit examen.");
