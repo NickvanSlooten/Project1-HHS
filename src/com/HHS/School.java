@@ -13,6 +13,11 @@ public class School {
         return exams.get(exams.size()-1);
     }
 
+    public Exam addExam() {
+        exams.add(new Exam());
+        return exams.get(exams.size()-1);
+    }
+
     public void removeExam(Exam exam) {
         exams.remove(exam);
     }
@@ -145,16 +150,8 @@ public class School {
     }
 
     public void menuHasStudentPassedExam() {
+        Student selectedStudent = getStudentByInput();
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Typ het studentnummer van de student: ");
-        long studentNumber = scanner.nextLong();
-        Student selectedStudent = null;
-        for (Student student : students) {
-            if (student.getNumber() == studentNumber) {
-                selectedStudent = student;
-                break;
-            }
-        }
         if (selectedStudent == null) {
             System.out.println("Er zit geen student met dit studentnummer in het systeem!");
         }
@@ -184,18 +181,13 @@ public class School {
     }
 
     public void menuAddExam(){
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("welke examen wilt u toevoegen?");
-        String nieuweExamen = scanner.nextLine();
-
-        addExam(nieuweExamen);
-        System.out.println("Examen verwijder: " + nieuweExamen);
-
+        Exam n = addExam();
+        System.out.println("Examen met naam: " + n.getName() + " toegevoegd");
     }
 
     public void menuRemoveExam(){
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Welke examen wilt u verwijder?");
+        System.out.println("Welk examen wilt u verwijderen?");
         String verwijderExamen = scanner.nextLine();
 
         for (Exam i : exams){
