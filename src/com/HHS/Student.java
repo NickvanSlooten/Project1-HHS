@@ -24,6 +24,18 @@ public class Student {
         this.name = naam;
     }
 
+    public void listPassedExams() {
+        String str = "";
+        for (Exam e : passedExams) {
+            str += e.getName() + " ";
+        }
+        if (!str.equals("")) {
+            System.out.println(str);
+        } else {
+            System.out.println("Deze student heeft geen examen behaald.");
+        }
+    }
+
     public long nextNumber(){
         return nextNumber++;
     }
