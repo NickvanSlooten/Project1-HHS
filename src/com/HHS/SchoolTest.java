@@ -3,7 +3,6 @@ package com.HHS;
 import org.junit.jupiter.api.Test;
 
 import java.io.ByteArrayInputStream;
-import java.io.InputStream;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -97,4 +96,19 @@ public class SchoolTest {
 
         assertEquals(school.getStudentByInput(),student);
    }
+    @Test
+    public void menuRemoveExam()
+    {
+        School school = new School();
+        for (Exam exam : school.getExams())
+        {
+            school.removeExam(exam);
+        }
+        school.addExam("Examen Naam");
+        assertEquals(school.getExams().size(), 1);
+        String data = String.format("1\n", school.getExams().get(0).getName());
+        System.setIn(new ByteArrayInputStream(data.getBytes()));
+        school.menuRemoveExam();
+        assertEquals(school.getExams().size(), 0);
+    }
 }
