@@ -36,11 +36,11 @@ public class SchoolTest {
             school.removeStudent(s);
         }
         school.addStudent("Student Naam");
-        Assert.assertEquals(school.getStudents().size(), 1);
+        assertEquals(school.getStudents().size(), 1);
         String data = String.format("%d\n", school.getStudents().get(0).getNumber());
         System.setIn(new ByteArrayInputStream(data.getBytes()));
         school.menuRemoveStudent();
-        Assert.assertEquals(school.getStudents().size(), 0);
+        assertEquals(school.getStudents().size(), 0);
     }
 
     @Test
@@ -62,7 +62,8 @@ public class SchoolTest {
         s3.addPassedExam(ex2);
         s3.addPassedExam(ex3);
         school.addStudent("Student 4");
-        Assert.assertEquals(school.studentWithMostPassedExams(), s3);
+        assertEquals(school.studentWithMostPassedExams(), s3);
+    }
 
     @Test
     public void menuAddExamTest() {
@@ -81,15 +82,10 @@ public class SchoolTest {
         assertEquals(school.getExams().size(), 1);
         assertEquals(school.getExams().get(0).getName(), "DeNaam");
     }
-
-
-
     
     @Test
     public void getStudentByInputTest() {
-    School school = new School();
-
-
+        School school = new School();
         for (Student s : school.getStudents())
         {
             school.removeStudent(s);
@@ -99,8 +95,6 @@ public class SchoolTest {
         String studentnummer = String.format("%d\n",student.getNumber());
         System.setIn(new ByteArrayInputStream(studentnummer.getBytes()));
 
-        Assert.assertEquals(school.getStudentByInput(),student);
-
+        assertEquals(school.getStudentByInput(),student);
    }
-
 }
