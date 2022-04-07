@@ -2,6 +2,7 @@ package com.HHS;
 
 import java.util.ArrayList;
 import java.util.Locale;
+import java.util.Scanner;
 
 public class Question {
 
@@ -46,6 +47,27 @@ public class Question {
             ans = true;
         }
         return ans;
+    }
+
+    public boolean CheckVraag()
+    {
+        Scanner scan = new Scanner(System.in);
+
+            System.out.println(questionToString());
+
+            String antwoord = scan.nextLine();
+
+            if(questionCheck(antwoord))
+            {
+                System.out.println("Goed gedaan!");
+                return true;
+            }
+            else
+            {
+                System.out.println("Fout. Het goede antwoord is: ");
+                System.out.println(getAnswer());
+                return false;
+            }
     }
 
 
