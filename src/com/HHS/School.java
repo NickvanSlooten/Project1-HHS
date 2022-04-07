@@ -6,6 +6,11 @@ import java.util.Scanner;
 public class School {
     Scanner scan = new Scanner(System.in);
     private ArrayList<Student> students = new ArrayList<>();
+
+    public ArrayList<Exam> getExams() {
+        return exams;
+    }
+
     private ArrayList<Exam> exams = new ArrayList<>();
 
     public Exam addExam(String name) {
@@ -100,6 +105,9 @@ public class School {
 
     public void removeStudent(Student student){
         students.remove(student);
+    }
+    public void removeExam(Exam exam){
+        exams.remove(exam);
     }
 
     public ArrayList<Student> getStudents(){
@@ -226,3 +234,4 @@ public class School {
         }
     }
 }
+

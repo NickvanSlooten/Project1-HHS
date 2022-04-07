@@ -1,9 +1,10 @@
 package com.HHS;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.io.ByteArrayInputStream;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class SchoolTest {
     @Test
@@ -18,10 +19,10 @@ public class SchoolTest {
         {
             school.removeStudent(s);
         }
-        Assert.assertEquals(school.getStudents().size(), 0);
+        assertEquals(school.getStudents().size(), 0);
         school.menuAddStudent();
-        Assert.assertEquals(school.getStudents().size(), 1);
-        Assert.assertEquals(school.getStudents().get(0).getName(), "DeNaam");
+        assertEquals(school.getStudents().size(), 1);
+        assertEquals(school.getStudents().get(0).getName(), "DeNaam");
     }
 
     @Test
@@ -61,5 +62,24 @@ public class SchoolTest {
         s3.addPassedExam(ex3);
         school.addStudent("Student 4");
         Assert.assertEquals(school.studentWithMostPassedExams(), s3);
+
+    @Test
+    public void menuAddExamTest()
+    {
+        // Arrange
+        School school = new School();
+        String data = "DeNaam\n";
+        System.setIn(new ByteArrayInputStream(data.getBytes()));
+
+        // Act
+        for (Exam e : school.getExams())
+        {
+            school.removeExam(e);
+        }
+        // Assert
+        assertEquals(school.getExams().size(), 0);
+        school.menuAddExam();
+        assertEquals(school.getExams().size(), 1);
+        assertEquals(school.getExams().get(0).getName(), "DeNaam");
     }
 }
