@@ -99,11 +99,15 @@ public class SchoolTest {
     @Test
     public void menuRemoveExam()
     {
+        // Arrange
         School school = new School();
+
+        // Act
         for (Exam exam : school.getExams())
         {
             school.removeExam(exam);
         }
+        // Assert
         school.addExam("Examen Naam");
         assertEquals(school.getExams().size(), 1);
         String data = String.format("1\n", school.getExams().get(0).getName());
