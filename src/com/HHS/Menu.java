@@ -2,6 +2,8 @@ package com.HHS;
 
 import java.util.Scanner;
 import java.util.ArrayList;
+import java.util.concurrent.TimeUnit;
+
 public class Menu {
      // Create an ArrayList object   
     public static ArrayList<String>  Keuzes = new ArrayList<>();
@@ -75,6 +77,7 @@ public class Menu {
                 //Exit the program
                 System.exit(0);
             }
+            TimeUnit.SECONDS.sleep(3);
             laatKeuzesZien();
         }catch(Exception e) {
             System.out.println("Something went wrong: " + e.toString());
