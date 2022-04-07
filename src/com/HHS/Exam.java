@@ -53,30 +53,28 @@ public class Exam {
     //Neemt het examen af en geeft feedback naarmate je antwoord
     public boolean examenAfnemen()
     {
-        Scanner scan = new Scanner(System.in);
         int aantalGoed = 0;
 
         for(int i = 0; i < getQuestions().size(); i++)
         {
-            Question question = getQuestions().get(i);
-            System.out.println(question.questionToString());
 
-            String antwoord = scan.nextLine();
-
-            if(question.questionCheck(antwoord))
+            if(getQuestions().get(i).CheckVraag())
             {
-                System.out.println("Goed gedaan!");
                 aantalGoed++;
-            }
-            else
-            {
-                System.out.println("Fout. Het goede antwoord is: ");
-                System.out.println(question.getAnswer());
             }
 
         }
 
-        return didStudentPass(aantalGoed);
+        if(didStudentPass(aantalGoed))
+        {
+            System.out.println("Je bent geslaagd!");
+            return true;
+        }
+        else
+        {
+            System.out.println("Je hebt de examen niet gehaald.");
+            return false;
+        }
     }
 
     //checkt of een student een examen heeft gehaald
