@@ -16,7 +16,7 @@ public class Menu {
        Keuzes.add("8) Welke student heeft de meeste examens gehaald?");
        Keuzes.add("9) Examen toevoegen");
        Keuzes.add("10) Examen verwijderen");
-       Keuzes.add("11) Vragen Toevegoen");
+       Keuzes.add("11) Vragen Toevoegen");
        Keuzes.add("0) Exit");
        return Keuzes;
     }
