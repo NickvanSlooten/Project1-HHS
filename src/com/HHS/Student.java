@@ -24,6 +24,11 @@ public class Student {
         this.name = naam;
     }
 
+    public String getName()
+    {
+        return name;
+    }
+
     //geeft de behaalde examens
     public void listPassedExams() {
         String str = "";
