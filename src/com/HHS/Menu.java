@@ -45,8 +45,8 @@ public class Menu {
                 //Show exams
                 school.printExams();
             }else if(userChoice == 2) {
-                school.menuGetStudents();
                 //Show list of students
+                school.menuGetStudents();
             }else if (userChoice == 3) {
                 //Add new student
                 school.menuAddStudent();
@@ -54,11 +54,11 @@ public class Menu {
                 //Remove Student
                 school.menuRemoveStudent();
             }else if (userChoice == 5) {
-                school.menuExamenAfnemen();
                 //Do Exam test
+                school.menuExamenAfnemen();
             }else if (userChoice == 6) {
+                // Has student passed the exam
                 school.menuHasStudentPassedExam();
-                
             }else if (userChoice == 7) {
                 //Which exams did the student pass
                 school.menuStudentListPassedExams();
@@ -71,7 +71,9 @@ public class Menu {
             }else if (userChoice == 10) {
                 //Which student passed the most exams
                 school.menuRemoveExam();
+                // remove exam
             }else if (userChoice == 11){
+                // add questions
                 school.menuAddQuestion();
             }else if (userChoice == 0) {
                 //Exit the program
