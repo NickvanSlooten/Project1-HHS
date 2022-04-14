@@ -7,6 +7,7 @@ import java.io.ByteArrayInputStream;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class SchoolTest {
+    // Test of het toevoegen van een student correct werkt
     @Test
     public void menuAddStudent()
     {
@@ -25,6 +26,7 @@ public class SchoolTest {
         assertEquals(school.getStudents().get(0).getName(), "DeNaam");
     }
 
+    // Test of het verwijderen van een student
     @Test
     public void menuRemoveStudent()
     {
@@ -42,6 +44,7 @@ public class SchoolTest {
         assertEquals(school.getStudents().size(), 0);
     }
 
+    // Test of de functie "studentWithMostPassedExams" in school ook daadwerkelijk de goede waarde terug geeft.
     @Test
     public void studentWithMostPassedExams()
     {
@@ -64,6 +67,7 @@ public class SchoolTest {
         assertEquals(school.studentWithMostPassedExams(), s3);
     }
 
+    // Test of het toevoegen van een examen werkt.
     @Test
     public void menuAddExamTest() {
         // Arrange
@@ -83,7 +87,7 @@ public class SchoolTest {
     }
     
 
-    //Deze test. test daadwerkelijk of wij studenten kunnen opzoeken via een input van de gebruiker.
+    //Deze test test daadwerkelijk of wij studenten kunnen opzoeken via een input van de gebruiker.
     @Test
     public void getStudentByInputTest() {
         School school = new School();
@@ -97,7 +101,9 @@ public class SchoolTest {
         System.setIn(new ByteArrayInputStream(studentnummer.getBytes()));
 
         assertEquals(school.getStudentByInput(),student);
-   }
+    }
+
+    // Deze test test of het verwijderen van een examen werkt.
     @Test
     public void menuRemoveExam()
     {
