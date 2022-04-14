@@ -82,6 +82,8 @@ public class SchoolTest {
         assertEquals(school.getExams().get(0).getName(), "DeNaam");
     }
     
+
+    //Deze test. test daadwerkelijk of wij studenten kunnen opzoeken via een input van de gebruiker.
     @Test
     public void getStudentByInputTest() {
         School school = new School();
@@ -110,7 +112,7 @@ public class SchoolTest {
         // Assert
         school.addExam("Examen Naam");
         assertEquals(school.getExams().size(), 1);
-        String data = String.format("1\n", school.getExams().get(0).getName());
+        String data = "1\n";
         System.setIn(new ByteArrayInputStream(data.getBytes()));
         school.menuRemoveExam();
         assertEquals(school.getExams().size(), 0);

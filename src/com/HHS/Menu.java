@@ -2,6 +2,8 @@ package com.HHS;
 
 import java.util.Scanner;
 import java.util.ArrayList;
+import java.util.concurrent.TimeUnit;
+
 public class Menu {
      // Create an ArrayList object   
     public static ArrayList<String>  Keuzes = new ArrayList<>();
@@ -16,7 +18,7 @@ public class Menu {
        Keuzes.add("8) Welke student heeft de meeste examens gehaald?");
        Keuzes.add("9) Examen toevoegen");
        Keuzes.add("10) Examen verwijderen");
-       Keuzes.add("11) Vragen Toevegoen");
+       Keuzes.add("11) Vragen Toevoegen");
        Keuzes.add("0) Exit");
        return Keuzes;
     }
@@ -43,8 +45,8 @@ public class Menu {
                 //Show exams
                 school.printExams();
             }else if(userChoice == 2) {
-                school.menuGetStudents();
                 //Show list of students
+                school.menuGetStudents();
             }else if (userChoice == 3) {
                 //Add new student
                 school.menuAddStudent();
@@ -52,11 +54,11 @@ public class Menu {
                 //Remove Student
                 school.menuRemoveStudent();
             }else if (userChoice == 5) {
-                school.menuExamenAfnemen();
                 //Do Exam test
+                school.menuExamenAfnemen();
             }else if (userChoice == 6) {
+                // Has student passed the exam
                 school.menuHasStudentPassedExam();
-                
             }else if (userChoice == 7) {
                 //Which exams did the student pass
                 school.menuStudentListPassedExams();
@@ -69,12 +71,15 @@ public class Menu {
             }else if (userChoice == 10) {
                 //Which student passed the most exams
                 school.menuRemoveExam();
+                // remove exam
             }else if (userChoice == 11){
+                // add questions
                 school.menuAddQuestion();
             }else if (userChoice == 0) {
                 //Exit the program
                 System.exit(0);
             }
+            TimeUnit.SECONDS.sleep(3);
             laatKeuzesZien();
         }catch(Exception e) {
             System.out.println("Something went wrong: " + e.toString());

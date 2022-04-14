@@ -81,13 +81,9 @@ public class School {
 
         if(exam.examenAfnemen())
         {
-            System.out.println("Je bent geslaagd!");
             student.addPassedExam(exam);
         }
-        else
-        {
-            System.out.println("Je hebt de examen niet gehaald.");
-        }
+
 
     }
 
