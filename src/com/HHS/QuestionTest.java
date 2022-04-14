@@ -8,6 +8,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class QuestionTest {
 
+    // hier test ik of het ingevoerde antwoord goed is
     @Test
     public void questionCheck() {
 
@@ -21,6 +22,7 @@ class QuestionTest {
         assertEquals(result2, false);
     }
 
+    // hier test ik of de vraag, explanation en antwoord terug worden gegeven.
     @Test
     public void tostringTest() {
 
