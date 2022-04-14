@@ -4,6 +4,8 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class StudentTest {
+
+    //Test of een aangemaakte student een examen heeft gehaald als dit geslaagde examen is gekoppeld aan de student
     @Test
     public void hasPassedExam(){
         Student s1 = new Student("Bart");
@@ -18,6 +20,8 @@ public class StudentTest {
         assertEquals(eResult, result);
 
     }
+
+    //Nadat er examens zijn gehaald door studenten wordt er getest of het aantal behaalde examens wel zoveel is als dat is aangegeven.
     @Test
     public void getPassedExamsCount(){
         Student s1 = new Student("Henk");
