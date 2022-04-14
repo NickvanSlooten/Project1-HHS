@@ -82,6 +82,8 @@ public class SchoolTest {
         assertEquals(school.getExams().get(0).getName(), "DeNaam");
     }
     
+
+    //Deze test. test daadwerkelijk of wij studenten kunnen opzoeken via een input van de gebruiker.
     @Test
     public void getStudentByInputTest() {
         School school = new School();
