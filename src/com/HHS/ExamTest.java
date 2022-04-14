@@ -8,25 +8,24 @@ class ExamTest {
 
     @Test
     void createQuestion() {
-        Exam wiskunde = new Exam("Wiskunde");
+        //test of de constructor correct werkt en of de waardes correct worden opgevraagd uit de arraylist.
 
-        Question expected = new Question("Hoeveel Watermeloenen passen er in een auto",
-                "Volume van een auto delen door de volume van een watermeloen"
-        ,"-Wiskundig antwoord hier-");
+        Exam wiskunde = new Exam("Wiskunde");
 
         wiskunde.createQuestion("Hoeveel Watermeloenen passen er in een auto",
                 "Volume van een auto delen door de volume van een watermeloen"
                 ,"-Wiskundig antwoord hier-");
         Question actual = wiskunde.getQuestions().get(0);
 
-        assertEquals(actual.getQuestion(), expected.getQuestion());
-        assertEquals(actual.getExplanation(), expected.getExplanation());
-        assertEquals(actual.getAnswer(), expected.getAnswer());
+        assertEquals(actual.getQuestion(), "Hoeveel Watermeloenen passen er in een auto");
+        assertEquals(actual.getExplanation(), "Volume van een auto delen door de volume van een watermeloen");
+        assertEquals(actual.getAnswer(), "-Wiskundig antwoord hier-");
 
     }
 
     @Test
     void updateMinimumCorrect() {
+        //test of het updateMinimumCorrect() functie de correcte waarde berekend
         Exam taal = new Exam("Engels");
 
         taal.createQuestion("test", "test", "test");
