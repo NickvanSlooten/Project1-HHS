@@ -47,8 +47,8 @@ public class School {
             e.createQuestion();
 
             System.out.println("Wilt uw stoppen met vragen toevoegen? (Y/N)");
-            String input = scan.nextLine();
-            if(input.equals("Y".toLowerCase()))
+            String input = scan.nextLine().toLowerCase();
+            if(input.equals("y"))
             {
                 System.out.println("Vragen toegevoegd");
                 vragenToevoegen = false;
